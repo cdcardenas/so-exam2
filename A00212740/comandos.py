@@ -8,9 +8,22 @@ def get_all_stats():
   return filter(None, listado_stats)
 
 
+def get_hdd():
+  grep_process = Popen(["df", "/dev/mapper/cl-root", "-h"], stdout=PIPE, stderr=PIPE)
+  lista= Popen(["awk",'{print $4}' ],stdin=grep_process.stdout, stdout=PIPE, stderr=PIPE).communicate()[0].split('\n') 
+  return filter(None, lista)
+
 def get_cpu():
-  grep_process = Popen(["mpstat", "", ""], stdout=PIPE, stderr=PIPE)
-  return filter(None, grep_process)
+  grep_process = Popen(["sar", "1", "1"], stdout=PIPE, stderr=PIPE)
+  lista = Popen(["awk", '{print $5}'], stdin=grep_process.stdout, stdout=PIPE, stderr=PIPE).communicate()[0].split('\n')
+  return filter(None, lista)
+
+def get_service():
+  grep_process = Popen(["service", "httpd", "status"], stdout=PIPE, stderr=PIPE)
+  lista = Popen(["awk", '-F', 'Active:', '{print $2}'], stdin=grep_process.stdout, stdout=PIPE, stderr=PIPE).communicate()[0].split('\n')
+
+  return filter(None, lista)
+
 
 
 
