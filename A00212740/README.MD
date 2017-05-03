@@ -48,13 +48,17 @@ A la documentación se puede acceder mediante la url: Dirección_IP:Puerto
 Para los comandos usados para obtener la información del sistema fueron:
 
 RAM: 
-$ vmstat -s -S m 
+
+	$ vmstat -s -S m 
 HDD: 
-$ df /dev/mapper/cl-root -h awk {print $4}
+
+	$ df /dev/mapper/cl-root -h awk {print $4}
 CPU: 
-$ sar 1 1 |  awk {print $5}
+
+	$ sar 1 1 |  awk {print $5}
 Servicio: 
-$ /usr/sbin/service httpd status | awk -F  ‘Active:’ {print $2}
+
+	$ /usr/sbin/service httpd status | awk -F  ‘Active:’ {print $2}
 
 ![][7]
 
