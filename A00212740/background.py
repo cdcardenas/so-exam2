@@ -1,7 +1,7 @@
 from comandos import get_all_stats, get_hdd, get_cpu, get_service
 import json, time
 
-archivo = open('dblocal.txt', 'a')
+archivo = open('dblocal.txt', 'a+')
 
 
 
@@ -24,7 +24,7 @@ archivo.write(var4+"\n")
 archivo.write("\n")
 
 archivo.close()
-leer = open('dblocal.txt', 'r')
+leer = open('dblocal.txt', 'r+')
 print('<<<<DATOS>>>>')
 print(leer.read())
 

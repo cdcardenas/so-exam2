@@ -19,7 +19,7 @@ def get_cpu():
   return filter(None, lista)
 
 def get_service():
-  grep_process = Popen(["service", "httpd", "status"], stdout=PIPE, stderr=PIPE)
+  grep_process = Popen(["/usr/sbin/service", "httpd", "status"], stdout=PIPE, stderr=PIPE)
   lista = Popen(["awk", '-F', 'Active:', '{print $2}'], stdin=grep_process.stdout, stdout=PIPE, stderr=PIPE).communicate()[0].split('\n')
 
   return filter(None, lista)

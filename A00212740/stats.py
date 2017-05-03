@@ -1,13 +1,21 @@
 from flask import Flask, abort, request
 import json
+from flask_restplus import Resource, Api
+from flask_restplus import fields
 
 from comandos import get_all_stats, get_hdd, get_cpu, get_service
 
 app = Flask(__name__)
-api_url= '/v1.0'
+#api_url= '/v1.0'
+api = Api(app,version='1.0', title='API for resource management', description='Documentacion Parcial 2 Sistemas operativos')
 
-@app.route(api_url+'/stats', methods=['GET'])
-def read_stats():
+ns = api.namespace('v1.0/stats', description='Operaciones para ver los recursos del computador')
+@ns.route('/')
+#@app.route(api_url+'/stats', methods=['GET'])
+class StatsCollection(Resource):
+ @api.response(200, 'Recursos usados.')
+ def get(self):
+  """Lista de recursos"""
   list = {}
   list["RAM en uso:"] = get_all_stats()[1]
   list["HDD disponible:"] = get_hdd()[1]
@@ -15,7 +23,20 @@ def read_stats():
   list["Estado httpd:"] = get_service()
   return json.dumps(list),200
 
+ @api.response(404, 'HTTP 404 NOT FOUND')
+ def post(self):
+  """NO APLICA"""
+  return "HTTP 404 NOT FOUND", 404
 
+ @api.response(404, 'HTTP 404 NOT FOUND')
+ def put(self):
+  """NO APLICA"""
+  return "HTTP 404 NOT FOUND", 404
+
+ @api.response(404, 'HTTP 404 NOT FOUND')
+ def delete(self):
+  """NO APLICA"""
+  return "HTTP 404 NOT FOUND", 404
 
 
 if __name__=="__main__":
