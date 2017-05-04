@@ -6,7 +6,7 @@ from comandos import get_all_stats, get_cpu, get_service, get_hdd
 
 db.create_all()
 
-stats = Stats('10.4%', '758m', '51G', 'DDead' )
+stats = Stats(get cpu()[2], get_all_stats()[1], get_hdd()[1], get_service() )
 
 
 
