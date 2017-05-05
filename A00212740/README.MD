@@ -84,6 +84,6 @@ se adjuntan los codifos fuentes para el aplicativo Flask, el script de consultas
 [5]: images/5.png
 [6]: images/6.png
 [7]: images/7.png
-[8]: images/db1.png
-[9]: images/db2.png
+[8]: images/db1.PNG
+[9]: images/db2.PNG
 
