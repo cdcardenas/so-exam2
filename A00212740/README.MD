@@ -48,13 +48,11 @@ Esta API permite mediante una peticion tipo GET mostrarle al usuario el consumo 
 
 A la documentación se puede acceder mediante la url: Dirección_IP:Puerto 
 
+A continuación, se muestra la salida de la petición GET en el explorador de internet donde se puede visualizar el consumo de recursos de la CPU.
+
 ![][6]
 
 ![][4]
-
-
-A continuación, se muestra la salida de la petición GET en el explorador de internet donde se puede visualizar el consumo de recursos de la CPU.
-
 
 ![][5]
 
