@@ -19,11 +19,13 @@ crontab es un servicio del sistema operativo que permite agendar la ejecucion de
 
 	$ crontab -u check_user -e
 
-este comando permite editar el archivo de configuración de crontab en donde introducimos la linea :
+este comando permite editar el archivo de configuración de crontab en donde introducimos las lineas :
       
 * * * * * python ~/repositories/so-exam2/A00212740/background.py > ~/repositories/so-exam2/A00212740/dblocal.txt
+* * * * * python ~/repositories/so-exam2/A00212740/consultas.py
 
-esta linea le indica a crontab que queremos que se ejecute cada el script background.py cada 60 segundo y que la salida que esta generando el scripot sea almacenada en el archivo de texto dblocal.txt
+la primera linea le indica a crontab que queremos que se ejecute cada el script background.py cada 60 segundos y que la salida que esta generando el scripot sea almacenada en el archivo de texto dblocal.txt
+la segunda linea ejecuta el script consultas.py cada 60 segundos y almacena en la base de datos test.db por medio de sqliteAlchemy
 
 código fuente del script background.py: 
 
@@ -31,7 +33,14 @@ código fuente del script background.py:
 
 ![][2]
 
-2. Para el despliegue del API se utilizo Flask con el siguiente código fuente:
+
+código fuente del script consultas.py y del modelo de base de datos llamado modelo.py
+
+![][8]
+
+![][9]
+
+2. Para el despliegue del API se utilizo Flask y SwaggerUI con el siguiente código fuente:
 
 ![][3]
 
@@ -62,6 +71,11 @@ Servicio:
 
 ![][7]
 
+3. Anexos
+
+se adjuntan los codifos fuentes para el aplicativo Flask, el script de consultas en segundo plano y el modelo de base de datos.
+
+
 
 [1]: images/1.png
 [2]: images/2.png
@@ -70,4 +84,6 @@ Servicio:
 [5]: images/5.png
 [6]: images/6.png
 [7]: images/7.png
+[8]: images/db1.png
+[9]: images/db2.png
 
