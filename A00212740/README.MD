@@ -52,6 +52,10 @@ A la documentación se puede acceder mediante la url: Dirección_IP:Puerto
 
 ![][4]
 
+
+A continuación, se muestra la salida de la petición GET en el explorador de internet donde se puede visualizar el consumo de recursos de la CPU.
+
+
 ![][5]
 
 Para los comandos usados para obtener la información del sistema fueron:
@@ -71,9 +75,6 @@ Servicio:
 
 ![][7]
 
-3. Anexos
-
-se adjuntan los codifos fuentes para el aplicativo Flask, el script de consultas en segundo plano y el modelo de base de datos.
 
 
 
